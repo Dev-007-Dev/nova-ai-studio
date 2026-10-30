@@ -1,0 +1,320 @@
+{
+  "images": {
+    "img_86e3fdc07a": {
+      "id": "img_86e3fdc07a",
+      "title": "High-Fashion Editorial Portrait",
+      "original_filename": "studio_fashion_portrait.jpg",
+      "created_at": "2026-10-30T17:09:25Z",
+      "updated_at": "2026-10-30T17:09:25Z",
+      "width": 1080,
+      "height": 1350,
+      "caption": "An elegant, striking studio fashion portrait of a young woman with natural makeup, subtle freckles, and warm rim lighting against a neutral slate backdrop.",
+      "tags": [
+        "portrait",
+        "fashion",
+        "editorial",
+        "studio",
+        "woman",
+        "lighting",
+        "aesthetic",
+        "model",
+        "beauty",
+        "sharp"
+      ],
+      "objects": [
+        "fashion model",
+        "linen blouse",
+        "earrings",
+        "studio backdrop",
+        "softbox lighting"
+      ],
+      "dominant_colors": [
+        "Warm Amber",
+        "Charcoal Slate",
+        "Porcelain Ivory",
+        "Soft Terracotta"
+      ],
+      "embedding": null,
+      "current_version_id": "img_86e3fdc07a_v1",
+      "versions": [
+        {
+          "version_id": "img_86e3fdc07a_v0",
+          "version_number": 0,
+          "parent_version_id": null,
+          "image_path": "data\\images\\originals\\img_86e3fdc07a_v0.jpg",
+          "thumbnail_path": "data\\images\\thumbnails\\img_86e3fdc07a_v0_thumb.jpg",
+          "timestamp": "2026-10-30T17:09:25Z",
+          "edit_type": "original",
+          "prompt": "Original Image",
+          "model_used": "camera/upload",
+          "notes": "Original image 1080x1350"
+        },
+        {
+          "version_id": "img_86e3fdc07a_v1",
+          "version_number": 1,
+          "parent_version_id": "img_86e3fdc07a_v0",
+          "image_path": "data\\images\\versions\\img_86e3fdc07a_v1.jpg",
+          "thumbnail_path": "data\\images\\thumbnails\\img_86e3fdc07a_v1_thumb.jpg",
+          "timestamp": "2026-10-30T17:09:25Z",
+          "edit_type": "preset",
+          "prompt": "High-contrast fine-art noir black and white transformation",
+          "model_used": "Smart Vision Engine (noir_monochrome)",
+          "notes": "Sample visual transformation (noir_monochrome)"
+        }
+      ]
+    },
+    "img_369c32c31f": {
+      "id": "img_369c32c31f",
+      "title": "Cyberpunk Tokyo Night Rain",
+      "original_filename": "cyberpunk_neon_city.jpg",
+      "created_at": "2026-10-30T17:09:25Z",
+      "updated_at": "2026-10-30T17:09:25Z",
+      "width": 1080,
+      "height": 1351,
+      "caption": "A futuristic neon-drenched metropolis street at night with glowing electric cyan and magenta signs reflecting across rain-slick asphalt pavements.",
+      "tags": [
+        "cyberpunk",
+        "neon",
+        "tokyo",
+        "city",
+        "night",
+        "street",
+        "reflections",
+        "rain",
+        "futuristic",
+        "sci-fi"
+      ],
+      "objects": [
+        "neon signs",
+        "skyscrapers",
+        "wet street",
+        "crosswalk",
+        "street lights",
+        "pedestrians"
+      ],
+      "dominant_colors": [
+        "Electric Cyan",
+        "Neon Magenta",
+        "Deep Midnight Blue",
+        "Obsidian Black"
+      ],
+      "embedding": null,
+      "current_version_id": "img_369c32c31f_v1",
+      "versions": [
+        {
+          "version_id": "img_369c32c31f_v0",
+          "version_number": 0,
+          "parent_version_id": null,
+          "image_path": "data\\images\\originals\\img_369c32c31f_v0.jpg",
+          "thumbnail_path": "data\\images\\thumbnails\\img_369c32c31f_v0_thumb.jpg",
+          "timestamp": "2026-10-30T17:09:25Z",
+          "edit_type": "original",
+          "prompt": "Original Image",
+          "model_used": "camera/upload",
+          "notes": "Original image 1080x1351"
+        },
+        {
+          "version_id": "img_369c32c31f_v1",
+          "version_number": 1,
+          "parent_version_id": "img_369c32c31f_v0",
+          "image_path": "data\\images\\versions\\img_369c32c31f_v1.jpg",
+          "thumbnail_path": "data\\images\\thumbnails\\img_369c32c31f_v1_thumb.jpg",
+          "timestamp": "2026-10-30T17:09:25Z",
+          "edit_type": "preset",
+          "prompt": "Amplify cyberpunk neon reflections and atmospheric glow",
+          "model_used": "Smart Vision Engine (cyberpunk_neon)",
+          "notes": "Sample visual transformation (cyberpunk_neon)"
+        }
+      ]
+    },
+    "img_566a19db69": {
+      "id": "img_566a19db69",
+      "title": "Alpine Lake Golden Hour Reflection",
+      "original_filename": "alpine_mountain_sunset.jpg",
+      "created_at": "2026-10-30T17:09:25Z",
+      "updated_at": "2026-10-30T17:09:25Z",
+      "width": 1080,
+      "height": 721,
+      "caption": "A majestic alpine mountain range bathed in radiant 2800K golden hour sunlight, with dramatic rugged peaks perfectly mirrored in a crystal-clear mountain lake.",
+      "tags": [
+        "mountain",
+        "sunset",
+        "golden hour",
+        "lake",
+        "reflection",
+        "nature",
+        "landscape",
+        "alpine",
+        "trees",
+        "wilderness"
+      ],
+      "objects": [
+        "mountain peaks",
+        "alpine lake",
+        "pine forest",
+        "golden sunlight",
+        "cloud formations"
+      ],
+      "dominant_colors": [
+        "Golden Orange",
+        "Deep Emerald",
+        "Cobalt Blue",
+        "Granite Gray"
+      ],
+      "embedding": null,
+      "current_version_id": "img_566a19db69_v1",
+      "versions": [
+        {
+          "version_id": "img_566a19db69_v0",
+          "version_number": 0,
+          "parent_version_id": null,
+          "image_path": "data\\images\\originals\\img_566a19db69_v0.jpg",
+          "thumbnail_path": "data\\images\\thumbnails\\img_566a19db69_v0_thumb.jpg",
+          "timestamp": "2026-10-30T17:09:25Z",
+          "edit_type": "original",
+          "prompt": "Original Image",
+          "model_used": "camera/upload",
+          "notes": "Original image 1080x721"
+        },
+        {
+          "version_id": "img_566a19db69_v1",
+          "version_number": 1,
+          "parent_version_id": "img_566a19db69_v0",
+          "image_path": "data\\images\\versions\\img_566a19db69_v1.jpg",
+          "thumbnail_path": "data\\images\\thumbnails\\img_566a19db69_v1_thumb.jpg",
+          "timestamp": "2026-10-30T17:09:25Z",
+          "edit_type": "preset",
+          "prompt": "Intensify golden hour warmth and radiant sunset highlights",
+          "model_used": "Smart Vision Engine (golden_hour)",
+          "notes": "Sample visual transformation (golden_hour)"
+        }
+      ]
+    },
+    "img_db7fc67a03": {
+      "id": "img_db7fc67a03",
+      "title": "Golden Retriever Adventure in Meadow",
+      "original_filename": "playful_dog_nature.jpg",
+      "created_at": "2026-10-30T17:09:25Z",
+      "updated_at": "2026-10-30T17:09:26Z",
+      "width": 1080,
+      "height": 721,
+      "caption": "A joyful golden retriever sitting alert in a sun-dappled wild grass meadow, with soft afternoon sunlight illuminating its golden fur and a blurred forest background.",
+      "tags": [
+        "dog",
+        "golden retriever",
+        "pet",
+        "animal",
+        "meadow",
+        "grass",
+        "happy",
+        "sunlight",
+        "outdoor",
+        "canine"
+      ],
+      "objects": [
+        "golden retriever",
+        "collar",
+        "wild meadow grass",
+        "forest trees",
+        "sun flare"
+      ],
+      "dominant_colors": [
+        "Warm Gold",
+        "Meadow Green",
+        "Sunlight Yellow",
+        "Earthy Brown"
+      ],
+      "embedding": null,
+      "current_version_id": "img_db7fc67a03_v1",
+      "versions": [
+        {
+          "version_id": "img_db7fc67a03_v0",
+          "version_number": 0,
+          "parent_version_id": null,
+          "image_path": "data\\images\\originals\\img_db7fc67a03_v0.jpg",
+          "thumbnail_path": "data\\images\\thumbnails\\img_db7fc67a03_v0_thumb.jpg",
+          "timestamp": "2026-10-30T17:09:25Z",
+          "edit_type": "original",
+          "prompt": "Original Image",
+          "model_used": "camera/upload",
+          "notes": "Original image 1080x721"
+        },
+        {
+          "version_id": "img_db7fc67a03_v1",
+          "version_number": 1,
+          "parent_version_id": "img_db7fc67a03_v0",
+          "image_path": "data\\images\\versions\\img_db7fc67a03_v1.jpg",
+          "thumbnail_path": "data\\images\\thumbnails\\img_db7fc67a03_v1_thumb.jpg",
+          "timestamp": "2026-10-30T17:09:26Z",
+          "edit_type": "preset",
+          "prompt": "Convert to delicate fluid watercolor artwork",
+          "model_used": "Smart Vision Engine (watercolor_art)",
+          "notes": "Sample visual transformation (watercolor_art)"
+        }
+      ]
+    },
+    "img_02a667a4e4": {
+      "id": "img_02a667a4e4",
+      "title": "Architectural Creator Workspace",
+      "original_filename": "minimalist_coffee_workspace.jpg",
+      "created_at": "2026-10-30T17:09:26Z",
+      "updated_at": "2026-10-30T17:09:26Z",
+      "width": 1080,
+      "height": 719,
+      "caption": "A minimalist aesthetic desk setup featuring a MacBook, an artisanal ceramic coffee mug, wireless mouse, and a notebook on a clean oak wood surface with natural morning daylight.",
+      "tags": [
+        "workspace",
+        "minimalist",
+        "coffee",
+        "laptop",
+        "desk",
+        "technology",
+        "aesthetic",
+        "clean",
+        "office",
+        "productivity"
+      ],
+      "objects": [
+        "laptop",
+        "ceramic coffee mug",
+        "notebook",
+        "wireless mouse",
+        "wooden desk"
+      ],
+      "dominant_colors": [
+        "Natural Oak",
+        "Espresso Brown",
+        "Clean White",
+        "Matte Gray"
+      ],
+      "embedding": null,
+      "current_version_id": "img_02a667a4e4_v1",
+      "versions": [
+        {
+          "version_id": "img_02a667a4e4_v0",
+          "version_number": 0,
+          "parent_version_id": null,
+          "image_path": "data\\images\\originals\\img_02a667a4e4_v0.jpg",
+          "thumbnail_path": "data\\images\\thumbnails\\img_02a667a4e4_v0_thumb.jpg",
+          "timestamp": "2026-10-30T17:09:26Z",
+          "edit_type": "original",
+          "prompt": "Original Image",
+          "model_used": "camera/upload",
+          "notes": "Original image 1080x719"
+        },
+        {
+          "version_id": "img_02a667a4e4_v1",
+          "version_number": 1,
+          "parent_version_id": "img_02a667a4e4_v0",
+          "image_path": "data\\images\\versions\\img_02a667a4e4_v1.jpg",
+          "thumbnail_path": "data\\images\\thumbnails\\img_02a667a4e4_v1_thumb.jpg",
+          "timestamp": "2026-10-30T17:09:26Z",
+          "edit_type": "preset",
+          "prompt": "Apply vintage 1970s analog 35mm film grading",
+          "model_used": "Smart Vision Engine (vintage_film)",
+          "notes": "Sample visual transformation (vintage_film)"
+        }
+      ]
+    }
+  }
+}
