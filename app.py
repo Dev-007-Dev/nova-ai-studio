@@ -43,6 +43,13 @@ if css_path.exists():
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 # Initialize Session State
+NAV_TABS = [
+    "🖼️ Image Library & Search",
+    "🎨 Studio & Edit Mode",
+    "📜 Version History & Lineage",
+    "🧪 Prompt Engineering & Architecture"
+]
+
 if "storage" not in st.session_state:
     st.session_state.storage = StorageManager()
 if "edit_engine" not in st.session_state:
@@ -51,6 +58,8 @@ if "search_engine" not in st.session_state:
     st.session_state.search_engine = SearchEngine()
 if "selected_image_id" not in st.session_state:
     st.session_state.selected_image_id = None
+if "active_tab" not in st.session_state or st.session_state.active_tab not in NAV_TABS:
+    st.session_state.active_tab = NAV_TABS[0]
 if "openai_api_key" not in st.session_state:
     st.session_state.openai_api_key = DEFAULT_OPENAI_KEY
 if "openai_api_base" not in st.session_state:
@@ -261,18 +270,23 @@ st.markdown(f"""
 </div>
 """, unsafe_allow_html=True)
 
-nav_tabs = st.tabs([
-    "🖼️ Image Library & Search",
-    "🎨 Studio & Edit Mode",
-    "📜 Version History & Lineage",
-    "🧪 Prompt Engineering & Architecture"
-])
+selected_tab = st.radio(
+    "Navigation",
+    options=NAV_TABS,
+    index=NAV_TABS.index(st.session_state.active_tab),
+    horizontal=True,
+    label_visibility="collapsed",
+    key="main_navigation_bar"
+)
+if selected_tab != st.session_state.active_tab:
+    st.session_state.active_tab = selected_tab
+    st.rerun()
 
 
 # ==============================================================================
 # TAB 1: Image Library & Natural Language Search
 # ==============================================================================
-with nav_tabs[0]:
+if st.session_state.active_tab == NAV_TABS[0]:
     all_images = storage.get_all_images()
 
     st.markdown("### 🔍 Search Image Assets in Natural Language")
@@ -424,7 +438,7 @@ with nav_tabs[0]:
                             with btn_c1:
                                 if st.button("🎨 Open in Studio", key=f"edit_btn_{img_rec['id']}", use_container_width=True):
                                     st.session_state.selected_image_id = img_rec["id"]
-                                    st.success(f"Loaded '{img_rec['title']}' into Studio!")
+                                    st.session_state.active_tab = NAV_TABS[1]
                                     st.rerun()
                             with btn_c2:
                                 if st.button("🗑️", key=f"del_btn_{img_rec['id']}", help="Delete asset from library"):
@@ -437,7 +451,7 @@ with nav_tabs[0]:
 # ==============================================================================
 # TAB 2: Studio & Edit Mode
 # ==============================================================================
-with nav_tabs[1]:
+elif st.session_state.active_tab == NAV_TABS[1]:
     all_images = storage.get_all_images()
 
     if not all_images:
@@ -487,7 +501,7 @@ with nav_tabs[1]:
                     label_visibility="collapsed"
                 )
 
-                if "Active" in canvas_view_mode:
+                if canvas_view_mode == "✨ Active Version":
                     if active_img_path.exists():
                         st.image(
                             str(active_img_path),
@@ -598,16 +612,24 @@ with nav_tabs[1]:
                 st.markdown("#### 2. Custom Natural Language Instruction")
                 st.caption("Direct the model in plain conversational English. The prompt synthesizer will translate it into a preservation-aware specification.")
 
+                if st.session_state.engine_mode == "local":
+                    st.markdown("""
+                    <div style="background:rgba(99,102,241,0.08); border:1px solid rgba(99,102,241,0.25); border-radius:10px; padding:10px 14px; margin-bottom:12px; font-size:0.8rem; color:#cbd5e1; line-height:1.4;">
+                      <strong style="color:#a5b4fc;">⚡ Smart Local Engine (Zero Cost Mode)</strong><br>
+                      The local engine simulates visual styles, lighting, color grading, and skin/hair portrait retouches directly on your CPU. To <strong>physically inpaint or generate new objects</strong> (like generating trees, removing hair, or altering physical features), connect OpenAI DALL-E 3 or Google Gemini in the sidebar.
+                    </div>
+                    """, unsafe_allow_html=True)
+
                 # Prompt suggestion chips
                 st.markdown("<span style='font-size:0.75rem; color:#94a3b8; font-weight:600;'>INSPIRATION TEMPLATES:</span>", unsafe_allow_html=True)
                 sug_c1, sug_c2 = st.columns(2)
                 with sug_c1:
                     if st.button("✂️ 'remove background'", use_container_width=True):
                         st.session_state.custom_prompt_input = "remove the background and isolate subject on clean studio backdrop"
-                    if st.button("🌳 'add trees in background'", use_container_width=True):
-                        st.session_state.custom_prompt_input = "add lush green autumn trees in the background"
+                    if st.button("💆 'retouch skin & hair'", use_container_width=True):
+                        st.session_state.custom_prompt_input = "apply soft portrait retouching to hair and skin texture"
                 with sug_c2:
-                    if st.button("🌅 'change lighting to sunset'", use_container_width=True):
+                    if st.button("🌅 'sunset golden hour'", use_container_width=True):
                         st.session_state.custom_prompt_input = "change colors and lighting to warm cinematic sunset golden hour"
                     if st.button("🕶️ 'cyberpunk neon glow'", use_container_width=True):
                         st.session_state.custom_prompt_input = "apply cyberpunk neon lighting with electric cyan and magenta reflections"
@@ -665,7 +687,7 @@ with nav_tabs[1]:
 # ==============================================================================
 # TAB 3: Version History & Lineage
 # ==============================================================================
-with nav_tabs[2]:
+elif st.session_state.active_tab == NAV_TABS[2]:
     all_images = storage.get_all_images()
     if not all_images:
         st.info("No images in library yet.")
@@ -742,7 +764,7 @@ with nav_tabs[2]:
 # ==============================================================================
 # TAB 4: Prompt Engineering & API Architecture Documentation
 # ==============================================================================
-with nav_tabs[3]:
+elif st.session_state.active_tab == NAV_TABS[3]:
     st.markdown("### 🧪 Prompt Engineering Architecture & Live Sandbox")
 
     st.markdown("""

@@ -185,6 +185,30 @@ def _apply_watercolor(image: Image.Image) -> Image.Image:
     return result
 
 
+def _apply_portrait_retouch(image: Image.Image) -> Image.Image:
+    """Simulate portrait beauty & hair/skin retouching with soft focus smoothing."""
+    # Soften hair and skin textures while preserving overall structure
+    smoothed = image.filter(ImageFilter.SMOOTH_MORE).filter(ImageFilter.GaussianBlur(radius=2))
+    arr_orig = np.array(image, dtype=np.float32)
+    arr_smooth = np.array(smoothed, dtype=np.float32)
+
+    # Soft blend to reduce hair/skin texture details
+    blended = np.clip(arr_smooth * 0.60 + arr_orig * 0.40, 0, 255).astype(np.uint8)
+    res = Image.fromarray(blended)
+    res = ImageEnhance.Contrast(res).enhance(1.08)
+    return ImageEnhance.Color(res).enhance(1.05)
+
+
+def _apply_nature_enrich(image: Image.Image) -> Image.Image:
+    """Enrich greens, foliage warmth, and natural sunlight depth."""
+    arr = np.array(image, dtype=np.float32)
+    arr[:, :, 1] = np.clip(arr[:, :, 1] * 1.15 + 6.0, 0, 255)
+    arr[:, :, 0] = np.clip(arr[:, :, 0] * 1.05 + 4.0, 0, 255)
+    res = Image.fromarray(arr.astype(np.uint8))
+    res = ImageEnhance.Color(res).enhance(1.22)
+    return ImageEnhance.Sharpness(res).enhance(1.15)
+
+
 def apply_natural_language_edit_local(image: Image.Image, instruction: str) -> Image.Image:
     """Intelligently interpret natural language instructions and apply appropriate visual edits."""
     inst_lower = instruction.lower().strip()
@@ -192,6 +216,14 @@ def apply_natural_language_edit_local(image: Image.Image, instruction: str) -> I
     # Background removal / isolation
     if any(k in inst_lower for k in ["remove background", "cut out", "isolate", "studio background", "transparent", "white background"]):
         return _apply_studio_cutout(image)
+
+    # Hair / skin / portrait retouching
+    if any(k in inst_lower for k in ["hair", "bald", "shave", "skin", "smooth", "face", "retouch", "blemish", "wrinkle"]):
+        return _apply_portrait_retouch(image)
+
+    # Nature / trees / foliage enhancement
+    if any(k in inst_lower for k in ["tree", "trees", "plant", "forest", "nature", "leaves", "grass", "foliage", "green"]):
+        return _apply_nature_enrich(image)
 
     # Lighting / sunset / golden hour
     if any(k in inst_lower for k in ["sunset", "golden hour", "warm", "sunlight", "golden", "amber", "morning sun"]):

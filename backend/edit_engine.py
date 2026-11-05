@@ -105,6 +105,10 @@ def synthesize_prompt_with_llm(
     category = "General Edit"
     if "remove background" in inst_lower:
         category = "Background Removal"
+    elif any(k in inst_lower for k in ["hair", "bald", "shave", "skin", "wrinkle", "blemish", "face", "retouch"]):
+        category = "Portrait & Feature Retouch"
+    elif any(k in inst_lower for k in ["tree", "trees", "plant", "nature", "forest", "foliage"]):
+        category = "Environment & Nature"
     elif "add" in inst_lower:
         category = "Object Insertion"
     elif "remove" in inst_lower:
